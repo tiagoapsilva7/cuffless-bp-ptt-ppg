@@ -1,0 +1,49 @@
+site,target,model,mae_mmhg,me_mmhg,sd_mmhg
+"Distal IR",Systolic,"Random Forest",10.53,0.24,13.79
+"Distal IR",Systolic,"XGBoost",10.55,-0.13,13.72
+"Distal IR",Systolic,"SVM (RBF)",10.16,-1.71,13.62
+"Distal IR",Systolic,"Gaussian Process",9.96,-1.48,13.36
+"Distal IR",Diastolic,"Random Forest",7.25,-1.00,8.75
+"Distal IR",Diastolic,"XGBoost",7.96,-0.08,9.04
+"Distal IR",Diastolic,"SVM (RBF)",6.25,-0.01,7.75
+"Distal IR",Diastolic,"Gaussian Process",6.97,-0.69,8.55
+"Distal Red",Systolic,"Random Forest",10.18,-0.61,12.70
+"Distal Red",Systolic,"XGBoost",9.63,-1.06,12.70
+"Distal Red",Systolic,"SVM (RBF)",8.98,-1.25,11.37
+"Distal Red",Systolic,"Gaussian Process",9.09,1.00,11.88
+"Distal Red",Diastolic,"Random Forest",7.64,-0.31,8.96
+"Distal Red",Diastolic,"XGBoost",7.50,1.39,8.72
+"Distal Red",Diastolic,"SVM (RBF)",7.30,0.42,8.88
+"Distal Red",Diastolic,"Gaussian Process",7.42,1.22,8.57
+"Distal Green",Systolic,"Random Forest",11.27,-1.31,15.47
+"Distal Green",Systolic,"XGBoost",10.85,-0.59,14.42
+"Distal Green",Systolic,"SVM (RBF)",10.75,-0.80,14.29
+"Distal Green",Systolic,"Gaussian Process",10.32,-0.87,13.86
+"Distal Green",Diastolic,"Random Forest",6.85,-0.75,7.86
+"Distal Green",Diastolic,"XGBoost",7.03,0.20,8.45
+"Distal Green",Diastolic,"SVM (RBF)",5.88,-0.19,6.95
+"Distal Green",Diastolic,"Gaussian Process",7.02,1.14,8.34
+"Proximal IR",Systolic,"Random Forest",11.16,0.50,15.82
+"Proximal IR",Systolic,"XGBoost",10.30,-0.58,14.54
+"Proximal IR",Systolic,"SVM (RBF)",10.91,-0.53,16.64
+"Proximal IR",Systolic,"Gaussian Process",10.24,-2.01,14.15
+"Proximal IR",Diastolic,"Random Forest",6.74,-1.35,8.23
+"Proximal IR",Diastolic,"XGBoost",6.93,-0.70,8.82
+"Proximal IR",Diastolic,"SVM (RBF)",6.21,-0.05,8.05
+"Proximal IR",Diastolic,"Gaussian Process",6.38,-0.09,7.44
+"Proximal Red",Systolic,"Random Forest",10.10,-0.47,14.00
+"Proximal Red",Systolic,"XGBoost",10.13,-0.45,13.91
+"Proximal Red",Systolic,"SVM (RBF)",11.21,-1.59,16.89
+"Proximal Red",Systolic,"Gaussian Process",11.27,-0.82,15.13
+"Proximal Red",Diastolic,"Random Forest",7.86,-0.75,9.96
+"Proximal Red",Diastolic,"XGBoost",7.94,-1.43,10.44
+"Proximal Red",Diastolic,"SVM (RBF)",7.50,-0.20,9.56
+"Proximal Red",Diastolic,"Gaussian Process",6.60,0.68,8.14
+"Proximal Green",Systolic,"Random Forest",11.41,-2.95,15.92
+"Proximal Green",Systolic,"XGBoost",11.50,-2.69,15.39
+"Proximal Green",Systolic,"SVM (RBF)",10.51,-1.77,14.88
+"Proximal Green",Systolic,"Gaussian Process",11.15,-0.73,14.91
+"Proximal Green",Diastolic,"Random Forest",8.32,-0.64,10.46
+"Proximal Green",Diastolic,"XGBoost",8.28,-1.43,11.03
+"Proximal Green",Diastolic,"SVM (RBF)",6.84,-0.27,8.65
+"Proximal Green",Diastolic,"Gaussian Process",8.32,0.66,10.11

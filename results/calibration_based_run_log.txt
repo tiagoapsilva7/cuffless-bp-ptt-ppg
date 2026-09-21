@@ -1,0 +1,473 @@
+Extracting features for all wavelengths and sites (Splitting into Start & End halves)...
+
+
+################################################################################
+### EVALUATING: Distal IR (pleth_1) ###
+Discarded blocks (< 5 valid beats): s15_start, s15_end, s4_end, s9_start, s9_end
+################################################################################
+
+--- EXTRACTED CALIBRATION FEATURES (Total: 52) ---
+
+--- Predicting Systolic BP using Distal IR PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 4.71       | -0.70      | 7.05      
+XGBoost              | 4.27       | -1.64      | 5.45      
+SVM (RBF)            | 6.72       | -0.28      | 9.25      
+Gaussian Process     | 7.13       | -1.15      | 9.94      
+
+>>> BEST MODEL for Systolic BP: XGBoost (Overall MAE: 4.27) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_sys                 (Avg Rank: 1.00)
+    2. End_T_S_rel_F             (Avg Rank: 2.82)
+    3. End_Amin                  (Avg Rank: 3.18)
+    4. weight                    (Avg Rank: 3.58)
+    5. End_Vmax                  (Avg Rank: 7.58)
+    6. End_T_Amp_75              (Avg Rank: 7.74)
+    7. age                       (Avg Rank: 8.08)
+    8. height                    (Avg Rank: 8.32)
+    9. End_Amax                  (Avg Rank: 9.61)
+    10. Delta_Mean_HR             (Avg Rank: 10.45)
+
+--- Statistical Comparison of Models for Systolic BP (Distal IR) ---
+Shapiro-Wilk for Random Forest       : p-value = 3.2259e-04 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 2.0007e-03 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 5.7538e-03 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 5.4984e-03 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 6.2256e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 8.7429e-02 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 6.0207e-02 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 3.2341e-02 | Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 6.6288e-02 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 5.1528e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Distal IR PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 6.41       | 0.11       | 7.40      
+XGBoost              | 5.96       | 0.29       | 7.01      
+SVM (RBF)            | 5.72       | 0.33       | 6.77      
+Gaussian Process     | 6.69       | 0.08       | 8.11      
+
+>>> BEST MODEL for Diastolic BP: SVM (RBF) (Overall MAE: 5.72) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. Delta_Mean_HR             (Avg Rank: 2.21)
+    3. End_T_S_rel_F             (Avg Rank: 4.29)
+    4. End_Ratio_S_N             (Avg Rank: 4.66)
+    5. End_S_amp                 (Avg Rank: 5.34)
+    6. height                    (Avg Rank: 8.61)
+    7. gender                    (Avg Rank: 8.66)
+    8. Delta_HRV                 (Avg Rank: 8.79)
+    9. weight                    (Avg Rank: 10.53)
+    10. End_Ratio_S_D             (Avg Rank: 11.08)
+
+--- Statistical Comparison of Models for Diastolic BP (Distal IR) ---
+Shapiro-Wilk for Random Forest       : p-value = 3.7482e-01 (Normal)
+Shapiro-Wilk for XGBoost             : p-value = 2.6959e-01 (Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 5.7981e-01 (Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 2.3488e-01 (Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Paired t-test        | p-value = 4.1940e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Paired t-test        | p-value = 2.4053e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Paired t-test        | p-value = 7.0519e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Paired t-test        | p-value = 7.8116e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Paired t-test        | p-value = 4.4686e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Paired t-test        | p-value = 4.6292e-02 | Significant
+--------------------------------------------------------------------------------
+
+
+################################################################################
+### EVALUATING: Distal Red (pleth_2) ###
+Discarded blocks (< 5 valid beats): s14_start, s14_end, s4_end
+################################################################################
+
+--- Predicting Systolic BP using Distal Red PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 4.94       | -0.62      | 6.53      
+XGBoost              | 4.72       | -0.52      | 6.21      
+SVM (RBF)            | 5.47       | 1.15       | 7.43      
+Gaussian Process     | 5.50       | 0.51       | 8.12      
+
+>>> BEST MODEL for Systolic BP: XGBoost (Overall MAE: 4.72) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_sys                 (Avg Rank: 1.00)
+    2. weight                    (Avg Rank: 2.45)
+    3. End_T_S_rel_F             (Avg Rank: 3.42)
+    4. Delta_T_Amin              (Avg Rank: 5.47)
+    5. height                    (Avg Rank: 5.72)
+    6. End_T_Amp_75              (Avg Rank: 6.95)
+    7. End_T_N_rel_S             (Avg Rank: 7.95)
+    8. End_T_Amp_50              (Avg Rank: 9.53)
+    9. Delta_T_Vmin              (Avg Rank: 10.62)
+    10. gender                    (Avg Rank: 12.28)
+
+--- Statistical Comparison of Models for Systolic BP (Distal Red) ---
+Shapiro-Wilk for Random Forest       : p-value = 9.2431e-03 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 3.5320e-02 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 8.3863e-03 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 9.7423e-04 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 4.3043e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 4.5238e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 3.4881e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 4.5238e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 4.7491e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 8.4082e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Distal Red PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 7.16       | 0.21       | 8.24      
+XGBoost              | 7.29       | 1.74       | 8.96      
+SVM (RBF)            | 7.45       | -0.09      | 8.56      
+Gaussian Process     | 7.16       | 0.91       | 8.78      
+
+>>> BEST MODEL for Diastolic BP: Random Forest (Overall MAE: 7.16) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. Delta_N_amp               (Avg Rank: 3.20)
+    3. End_T_D_rel_S             (Avg Rank: 5.28)
+    4. Delta_D_amp               (Avg Rank: 5.50)
+    5. Delta_T_Vmin              (Avg Rank: 5.92)
+    6. End_T_Vmin                (Avg Rank: 10.65)
+    7. End_T_N_rel_S             (Avg Rank: 11.40)
+    8. End_Amax                  (Avg Rank: 11.88)
+    9. weight                    (Avg Rank: 11.93)
+    10. Delta_Vmin                (Avg Rank: 12.62)
+
+--- Statistical Comparison of Models for Diastolic BP (Distal Red) ---
+Shapiro-Wilk for Random Forest       : p-value = 4.0320e-01 (Normal)
+Shapiro-Wilk for XGBoost             : p-value = 6.6414e-02 (Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 6.5128e-01 (Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 6.3344e-02 (Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Paired t-test        | p-value = 8.6419e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Paired t-test        | p-value = 6.8297e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Paired t-test        | p-value = 9.9768e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Paired t-test        | p-value = 8.7831e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Paired t-test        | p-value = 9.0072e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Paired t-test        | p-value = 7.1373e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+
+################################################################################
+### EVALUATING: Distal Green (pleth_3) ###
+Discarded blocks (< 5 valid beats): s13_start, s13_end, s9_start, s9_end
+################################################################################
+
+--- Predicting Systolic BP using Distal Green PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 5.09       | 0.97       | 6.99      
+XGBoost              | 5.33       | -1.44      | 6.79      
+SVM (RBF)            | 6.96       | 0.65       | 9.47      
+Gaussian Process     | 7.84       | 0.41       | 10.80     
+
+>>> BEST MODEL for Systolic BP: Random Forest (Overall MAE: 5.09) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_sys                 (Avg Rank: 1.00)
+    2. End_Amin                  (Avg Rank: 3.00)
+    3. weight                    (Avg Rank: 3.30)
+    4. End_Amax                  (Avg Rank: 5.30)
+    5. Delta_T_Vmin              (Avg Rank: 5.65)
+    6. End_T_S_rel_F             (Avg Rank: 6.78)
+    7. Delta_T_S_rel_F           (Avg Rank: 8.05)
+    8. End_T_Amp_75              (Avg Rank: 8.07)
+    9. End_Vmax                  (Avg Rank: 10.07)
+    10. End_T_Vmin                (Avg Rank: 10.30)
+
+--- Statistical Comparison of Models for Systolic BP (Distal Green) ---
+Shapiro-Wilk for Random Forest       : p-value = 8.0308e-04 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 9.6442e-03 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 9.4722e-04 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 8.2706e-03 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 7.0118e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 2.9575e-02 | Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 2.6642e-02 | Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 2.3051e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 7.5851e-02 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.6496e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Distal Green PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 6.10       | 0.67       | 7.35      
+XGBoost              | 6.22       | -0.17      | 7.52      
+SVM (RBF)            | 5.14       | 0.39       | 6.74      
+Gaussian Process     | 5.95       | 0.78       | 7.44      
+
+>>> BEST MODEL for Diastolic BP: SVM (RBF) (Overall MAE: 5.14) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. End_Amin                  (Avg Rank: 2.10)
+    3. End_Amax                  (Avg Rank: 4.03)
+    4. End_Vmin                  (Avg Rank: 5.08)
+    5. End_Ratio_S_N             (Avg Rank: 7.10)
+    6. End_S_amp                 (Avg Rank: 7.17)
+    7. height                    (Avg Rank: 7.97)
+    8. End_T_D_rel_S             (Avg Rank: 8.32)
+    9. Delta_T_Vmin              (Avg Rank: 9.50)
+    10. gender                    (Avg Rank: 11.50)
+
+--- Statistical Comparison of Models for Diastolic BP (Distal Green) ---
+Shapiro-Wilk for Random Forest       : p-value = 3.0452e-02 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 3.9652e-02 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 1.6824e-02 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 9.8604e-02 (Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 1.0000e+00 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 2.3051e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 9.5633e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 1.2309e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 9.8544e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 2.4549e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+
+################################################################################
+### EVALUATING: Proximal IR (pleth_4) ###
+Discarded blocks (< 5 valid beats): s10_end, s15_start, s15_end, s20_start, s20_end, s9_start, s9_end
+################################################################################
+
+--- Predicting Systolic BP using Proximal IR PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 6.03       | 0.10       | 8.10      
+XGBoost              | 7.93       | -0.27      | 10.98     
+SVM (RBF)            | 7.89       | 0.87       | 10.08     
+Gaussian Process     | 8.69       | -0.50      | 11.13     
+
+>>> BEST MODEL for Systolic BP: Random Forest (Overall MAE: 6.03) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_sys                 (Avg Rank: 1.00)
+    2. weight                    (Avg Rank: 2.67)
+    3. End_T_Amin                (Avg Rank: 3.03)
+    4. Delta_T_Vmax              (Avg Rank: 6.86)
+    5. End_T_Amp_50              (Avg Rank: 6.94)
+    6. Delta_T_Amp_25            (Avg Rank: 7.08)
+    7. Delta_T_Amp_50            (Avg Rank: 7.81)
+    8. Delta_T_Vmin              (Avg Rank: 9.03)
+    9. End_T_Amp_75              (Avg Rank: 9.94)
+    10. End_T_Vmax                (Avg Rank: 12.36)
+
+--- Statistical Comparison of Models for Systolic BP (Proximal IR) ---
+Shapiro-Wilk for Random Forest       : p-value = 1.5283e-02 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 2.7184e-03 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 2.5570e-02 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 2.1537e-03 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 4.8279e-02 | Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 4.3167e-02 | Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.3870e-02 | Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 5.7984e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 4.9508e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.9639e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Proximal IR PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 5.26       | -0.27      | 6.89      
+XGBoost              | 4.58       | 0.25       | 6.11      
+SVM (RBF)            | 5.44       | 0.28       | 7.05      
+Gaussian Process     | 5.93       | 0.12       | 7.72      
+
+>>> BEST MODEL for Diastolic BP: XGBoost (Overall MAE: 4.58) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. End_S_amp                 (Avg Rank: 3.11)
+    3. End_T_Amin                (Avg Rank: 4.81)
+    4. End_Mean_HR               (Avg Rank: 4.89)
+    5. Delta_T_Amax              (Avg Rank: 5.89)
+    6. End_T_D_rel_S             (Avg Rank: 7.69)
+    7. End_T_Amax                (Avg Rank: 8.97)
+    8. Delta_S_amp               (Avg Rank: 9.33)
+    9. End_Vmax                  (Avg Rank: 10.94)
+    10. End_T_S_rel_F             (Avg Rank: 13.64)
+
+--- Statistical Comparison of Models for Diastolic BP (Proximal IR) ---
+Shapiro-Wilk for Random Forest       : p-value = 3.3377e-03 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 2.6931e-03 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 9.7373e-04 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 7.9806e-02 (Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 1.4152e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 8.3173e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 3.4655e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 2.4621e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.5405e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 5.7984e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+
+################################################################################
+### EVALUATING: Proximal Red (pleth_5) ###
+Discarded blocks (< 5 valid beats): s10_start, s10_end, s13_start, s13_end, s15_start, s15_end, s16_start, s16_end, s20_start, s20_end, s9_start, s9_end
+################################################################################
+
+--- Predicting Systolic BP using Proximal Red PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 6.03       | -0.73      | 7.89      
+XGBoost              | 6.51       | -2.75      | 7.65      
+SVM (RBF)            | 8.57       | 0.05       | 12.23     
+Gaussian Process     | 8.41       | -0.15      | 11.90     
+
+>>> BEST MODEL for Systolic BP: Random Forest (Overall MAE: 6.03) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_sys                 (Avg Rank: 1.00)
+    2. weight                    (Avg Rank: 3.06)
+    3. Delta_T_Vmin              (Avg Rank: 3.41)
+    4. Delta_T_N_rel_S           (Avg Rank: 5.06)
+    5. Delta_N_amp               (Avg Rank: 6.12)
+    6. Delta_T_D_rel_S           (Avg Rank: 6.78)
+    7. Delta_Vmin                (Avg Rank: 8.00)
+    8. Delta_T_S_rel_F           (Avg Rank: 9.91)
+    9. Delta_D_amp               (Avg Rank: 10.19)
+    10. Delta_T_Amin              (Avg Rank: 10.78)
+
+--- Statistical Comparison of Models for Systolic BP (Proximal Red) ---
+Shapiro-Wilk for Random Forest       : p-value = 2.9910e-02 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 2.8442e-02 (Non-Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 1.8632e-03 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 3.1331e-03 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 8.9993e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 8.3252e-02 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.0458e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 7.8195e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 6.6855e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 8.6026e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Proximal Red PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 5.64       | -0.13      | 6.86      
+XGBoost              | 4.44       | -0.38      | 5.25      
+SVM (RBF)            | 6.15       | 0.72       | 7.94      
+Gaussian Process     | 6.13       | -0.03      | 7.71      
+
+>>> BEST MODEL for Diastolic BP: XGBoost (Overall MAE: 4.44) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. Delta_T_Vmin              (Avg Rank: 4.28)
+    3. Delta_T_N_rel_S           (Avg Rank: 4.47)
+    4. Delta_Ratio_S_D           (Avg Rank: 5.81)
+    5. End_Mean_HR               (Avg Rank: 6.56)
+    6. Delta_Ratio_S_N           (Avg Rank: 7.38)
+    7. Delta_T_D_rel_S           (Avg Rank: 8.16)
+    8. Delta_T_Amin              (Avg Rank: 9.72)
+    9. weight                    (Avg Rank: 11.28)
+    10. End_T_Amin                (Avg Rank: 11.38)
+
+--- Statistical Comparison of Models for Diastolic BP (Proximal Red) ---
+Shapiro-Wilk for Random Forest       : p-value = 3.4161e-03 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 7.2218e-01 (Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 8.1452e-04 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 1.4196e-02 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 2.1143e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 5.9659e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 4.3320e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 2.5223e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 1.9281e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 8.6026e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+
+################################################################################
+### EVALUATING: Proximal Green (pleth_6) ###
+Discarded blocks (< 5 valid beats): s10_start, s10_end, s11_start, s13_start, s13_end, s16_start, s20_start, s20_end, s21_start, s21_end, s7_end
+################################################################################
+
+--- Predicting Systolic BP using Proximal Green PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 7.25       | -0.80      | 10.67     
+XGBoost              | 8.23       | -0.72      | 10.66     
+SVM (RBF)            | 7.90       | -0.64      | 12.44     
+Gaussian Process     | 7.15       | -0.59      | 10.75     
+
+>>> BEST MODEL for Systolic BP: Gaussian Process (Overall MAE: 7.15) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. weight                    (Avg Rank: 1.60)
+    2. Calib_sys                 (Avg Rank: 1.63)
+    3. gender                    (Avg Rank: 4.40)
+    4. Delta_T_Amin              (Avg Rank: 4.63)
+    5. Delta_T_N_rel_S           (Avg Rank: 6.63)
+    6. age                       (Avg Rank: 7.33)
+    7. Delta_S_amp               (Avg Rank: 7.60)
+    8. Delta_Ratio_N_D           (Avg Rank: 8.07)
+    9. Delta_T_D_rel_S           (Avg Rank: 9.17)
+    10. Delta_Ratio_S_D           (Avg Rank: 9.57)
+
+--- Statistical Comparison of Models for Systolic BP (Proximal Green) ---
+Shapiro-Wilk for Random Forest       : p-value = 1.6232e-03 (Non-Normal)
+Shapiro-Wilk for XGBoost             : p-value = 1.2417e-01 (Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 5.9715e-04 (Non-Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 2.0619e-03 (Non-Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Wilcoxon Signed-Rank | p-value = 8.0396e-01 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 1.0000e+00 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 5.6140e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Wilcoxon Signed-Rank | p-value = 8.4692e-01 | Not Significant
+        XGBoost vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 5.6140e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Wilcoxon Signed-Rank | p-value = 4.8871e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+--- Predicting Diastolic BP using Proximal Green PPG (LOSO CV) ---
+Model                | MAE        | ME         | Std Error 
+------------------------------------------------------------
+Random Forest        | 7.48       | 0.23       | 8.77      
+XGBoost              | 4.88       | -0.65      | 6.45      
+SVM (RBF)            | 8.20       | -1.03      | 9.20      
+Gaussian Process     | 7.88       | -0.47      | 9.48      
+
+>>> BEST MODEL for Diastolic BP: XGBoost (Overall MAE: 4.88) <<<
+>>> Top 10 Most Significant Features (based on average Ensemble rank):
+    1. Calib_dia                 (Avg Rank: 1.00)
+    2. End_T_Amax                (Avg Rank: 4.43)
+    3. Delta_T_Amp_75            (Avg Rank: 7.40)
+    4. End_D_amp                 (Avg Rank: 8.53)
+    5. End_N_amp                 (Avg Rank: 9.33)
+    6. Delta_N_amp               (Avg Rank: 9.67)
+    7. Delta_D_amp               (Avg Rank: 10.07)
+    8. End_T_S_rel_F             (Avg Rank: 10.60)
+    9. End_T_Vmin                (Avg Rank: 11.13)
+    10. Delta_Ratio_S_D           (Avg Rank: 11.57)
+
+--- Statistical Comparison of Models for Diastolic BP (Proximal Green) ---
+Shapiro-Wilk for Random Forest       : p-value = 1.6176e-01 (Normal)
+Shapiro-Wilk for XGBoost             : p-value = 5.5980e-02 (Normal)
+Shapiro-Wilk for SVM (RBF)           : p-value = 4.2386e-01 (Normal)
+Shapiro-Wilk for Gaussian Process    : p-value = 1.5522e-01 (Normal)
+
+Pairwise Comparisons (alpha = 0.05):
+  Random Forest vs XGBoost         | Test: Paired t-test        | p-value = 7.7585e-02 | Not Significant
+  Random Forest vs SVM (RBF)       | Test: Paired t-test        | p-value = 4.4309e-01 | Not Significant
+  Random Forest vs Gaussian Proces | Test: Paired t-test        | p-value = 7.2972e-01 | Not Significant
+        XGBoost vs SVM (RBF)       | Test: Paired t-test        | p-value = 4.7184e-02 | Significant
+        XGBoost vs Gaussian Proces | Test: Paired t-test        | p-value = 1.0480e-01 | Not Significant
+      SVM (RBF) vs Gaussian Proces | Test: Paired t-test        | p-value = 7.8935e-01 | Not Significant
+--------------------------------------------------------------------------------
+
+[SUCCESS] Saved all subject predictions and Ground Truths to '../results/calibration_full_results.csv'
